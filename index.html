@@ -24,7 +24,7 @@
     h1{font-size:clamp(26px,4.5vw,40px);margin:8px 0 12px;letter-spacing:.02em;}
     .sub{font-size:clamp(14px,2.2vw,18px);color:var(--muted);margin:0 0 20px;}
     .cta{display:inline-block;border:none;background:var(--accent);color:#fff;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(37,99,235,.2);transition:transform .08s ease, box-shadow .08s ease;}
-    .cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(37,99,235,.28);} 
+    .cta:hover{animation:cta-bounce .8s ease-in-out infinite; box-shadow:0 10px 22px rgba(37,99,235,.28);}  
     .cta:focus{outline:none;box-shadow:0 6px 18px rgba(37,99,235,.2), var(--ring);}   
     .grid{display:grid;gap:16px;grid-template-columns:repeat(12, 1fr);}    
     .card{background:var(--card);border:1px solid #edf2f7;border-radius:16px;padding:18px;}
@@ -47,6 +47,10 @@
     @media (min-width:720px){
       .steps .card{padding:22px}
     }
+      /* hover bounce animation */
+    @keyframes cta-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .cta{will-change:transform}
+    @media (prefers-reduced-motion: reduce){.cta{animation:none !important;transition:none !important}.cta:hover{animation:none !important}}
   </style>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="遊びながら学ぶAIカフェ会｜AIで作った告知サイト" />
@@ -103,7 +107,6 @@
         <li><strong>第1回：</strong> 9月上旬 平日夜（19:00–21:00）@ 西与賀エリアのカフェ</li>
         <li><strong>第2回：</strong> 9月中旬 or 下旬 土日昼（13:00–15:00）@ 西与賀エリアのカフェ</li>
       </ul>
-      <p style="margin-top:14px"><a class="cta" href="https://forms.gle/REPLACE_WITH_YOUR_GOOGLE_FORM" target="_blank" rel="noopener">この日程で申し込む</a></p>
     </section>
 
     <section class="row" id="details" aria-labelledby="details-title">
@@ -117,7 +120,6 @@
         <li><strong>持ち物：</strong> スマホ or PC</li>
         <li><strong>対象：</strong> AI初心者〜少し触ったことがある方、アイデア出し・プログラミングに興味がある方</li>
       </ul>
-      <p style="margin-top:14px"><a class="cta" href="https://forms.gle/REPLACE_WITH_YOUR_GOOGLE_FORM" target="_blank" rel="noopener" aria-label="Googleフォームで申し込み">Googleフォームで申し込む</a></p>
     </section>
 
     <section class="row" id="faq" aria-labelledby="faq-title">
@@ -126,6 +128,13 @@
       <details class="card"><summary><strong>PCがなくても参加できますか？</strong></summary><p class="muted">スマホだけでOKです。操作はその場で一緒にやります。</p></details>
       <details class="card"><summary><strong>AI初心者でも大丈夫？</strong></summary><p class="muted">大歓迎です。アイデア出しからはじめるので安心してご参加ください。</p></details>
       <details class="card"><summary><strong>途中参加・早退はできますか？</strong></summary><p class="muted">できますが、最初の自己紹介と体験を逃すともったいないので、可能なら時間通りがオススメです。</p></details>
+    </section>
+
+    <section class="row" id="join" aria-labelledby="join-title">
+      <div class="kicker">JOIN</div>
+      <h2 id="join-title">参加申込</h2>
+      <p class="muted">気になる方は下のボタンからどうぞ。6名限定です。</p>
+      <p><a class="cta" href="https://forms.gle/REPLACE_WITH_YOUR_GOOGLE_FORM" target="_blank" rel="noopener">参加申込はこちら</a></p>
     </section>
 
     <footer>
